@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medline Industries Pre-IPO Investment Portal - Live Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #1e40af 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .animate-pulse-custom {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        .demo-banner {
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+            background-size: 200% 100%;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+
+    <!-- Demo Banner -->
+    <div class="demo-banner text-center py-2 text-white font-bold text-sm">
+        <i class="fas fa-star mr-2"></i>
+        LIVE DEMO - Use demo credentials: investor@medline.com / demo2024
+        <i class="fas fa-star ml-2"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <div class="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center text-white font-bold">M</div>
+                        <span class="ml-3 text-xl font-bold text-gray-900">Medline Industries</span>
+                        <span class="ml-2 text-sm bg-yellow-400 text-black px-2 py-1 rounded-full font-semibold">PRE-IPO</span>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showSection('login')" class="text-gray-700 hover:text-blue-900 font-medium">Login</button>
+                    <button onclick="showSection('register')" class="bg-blue-900 text-white px-4 py-2 rounded-md hover:bg-blue-800">Register</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <div id="login-section" class="min-h-screen gradient-bg flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-2xl">
+            <div>
+                <div class="mx-auto h-12 w-12 bg-blue-900 rounded-full flex items-center justify-center">
+                    <i class="fas fa-lock text-white text-xl"></i>
+                </div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Investor Portal Access</h2>
+                <p class="mt-2 text-center text-sm text-gray-600">
+                    Secure login for qualified investors
+                </p>
+            </div>
+            <form class="mt-8 space-y-6" onsubmit="handleLogin(event)">
+                <div class="space-y-4">
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input id="email" name="email" type="email" value="investor@medline.com" 
+                               class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                        <input id="password" name="password" type="password" value="demo2024"
+                               class="mt-1 appearance-none relative block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                    </div>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>
+                    </div>
+                    <div class="text-sm">
+                        <a href="#" class="font-medium text-blue-600 hover:text-blue-500">Forgot password?</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                            <i class="fas fa-sign-in-alt text-blue-500 group-hover:text-blue-400"></i>
+                        </span>
+                        Secure Login
+                    </button>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <p class="text-xs text-gray-500">
+                        <i class="fas fa-shield-alt mr-1"></i>
+                        Bank-level security • SSL encrypted • SOC 2 compliant
+                    </p>
+                </div>
+            </form>
+
+            <div class="mt-6 border-t pt-6">
+                <div class="text-center">
+                    <p class="text-sm text-gray-600 mb-4">New investor?</p>
+                    <button onclick="showSection('register')" class="w-full bg-gray-100 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-200 font-medium">
+                        Register for Access
+                    </button>
+                </div>
+            </div>
+
+            <!-- Key Metrics Sidebar -->
+            <div class="mt-6 bg-blue-50 p-4 rounded-lg">
+                <h3 class="text-sm font-semibold text-blue-900 mb-3">Investment Highlights</h3>
+                <div class="space-y-2 text-xs">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Annual Revenue</span>
+                        <span class="font-semibold text-blue-900">$23.2B</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Growth Record</span>
+                        <span class="font-semibold text-green-600">50 Years</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">IPO Target</span>
+                        <span class="font-semibold text-blue-900">$50B</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <div id="register-section" class="hidden min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-white shadow-xl rounded-lg overflow-hidden">
+                <div class="bg-blue-900 px-6 py-4">
+                    <h2 class="text-2xl font-bold text-white">Investor Registration & Qualification</h2>
+                    <p class="text-blue-100 mt-1">Complete your profile to access exclusive Pre-IPO investment opportunities</p>
+                </div>
+                
+                <form class="px-6 py-8 space-y-6" onsubmit="handleRegistration(event)">
+                    <!-- Step 1: Personal Information -->
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Step 1: Personal Information</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">First Name</label>
+                                <input type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Last Name</label>
+                                <input type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Email Address</label>
+                                <input type="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Investor Qualification -->
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Step 2: Investor Qualification</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Investor Type</label>
+                                <select class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option>Individual Accredited Investor</option>
+                                    <option>Institutional Investor</option>
+                                    <option>Family Office</option>
+                                    <option>Qualified Institutional Buyer</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Investment Capacity</label>
+                                <select class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option>$100K - $500K</option>
+                                    <option>$500K - $1M</option>
+                                    <option>$1M - $5M</option>
+                                    <option>$5M - $25M</option>
+                                    <option>$25M+</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Investment Timeline</label>
+                                <select class="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option>Immediate (1-30 days)</option>
+                                    <option>Near term (1-3 months)</option>
+                                    <option>Medium term (3-6 months)</option>
+                                    <option>Long term (6+ months)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Compliance -->
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Step 3: Compliance & Verification</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-start">
+                                <input type="checkbox" required class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">I certify that I am an accredited investor as defined by SEC regulations</span>
+                            </label>
+                            <label class="flex items-start">
+                                <input type="checkbox" required class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">I acknowledge the risks associated with Pre-IPO investments</span>
+                            </label>
+                            <label class="flex items-start">
+                                <input type="checkbox" required class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <span class="ml-2 text-sm text-gray-700">I agree to the Terms of Service and Privacy Policy</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t">
+                        <button type="submit" class="w-full bg-blue-900 text-white py-3 px-4 rounded-md hover:bg-blue-800 font-medium">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            Complete Registration
+                        </button>
+                        <p class="mt-3 text-xs text-center text-gray-500">
+                            Registration is subject to verification and approval. You will receive confirmation within 24-48 hours.
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="hidden min-h-screen bg-gray-50">
+        <!-- Dashboard Header -->
+        <div class="bg-white border-b">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center py-4">
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">Investment Dashboard</h1>
+                        <p class="text-sm text-gray-600">Welcome back, John Investor</p>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right">
+                            <div class="text-sm text-gray-500">Portfolio Value</div>
+                            <div class="text-lg font-semibold text-green-600">$2,450,000</div>
+                        </div>
+                        <button onclick="showSection('login')" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-300">
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <!-- Key Metrics Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow card-hover">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-blue-100 rounded-lg">
+                            <i class="fas fa-chart-line text-blue-600 text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Current Investment</p>
+                            <p class="text-2xl font-semibold text-gray-900">$500K</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center text-sm text-green-600">
+                            <i class="fas fa-arrow-up mr-1"></i>
+                            <span>+12.5% since investment</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow card-hover">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-green-100 rounded-lg">
+                            <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Projected Returns</p>
+                            <p class="text-2xl font-semibold text-gray-900">$1.5M</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center text-sm text-blue-600">
+                            <i class="fas fa-calendar mr-1"></i>
+                            <span>IPO target: Q2 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow card-hover">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-yellow-100 rounded-lg">
+                            <i class="fas fa-building text-yellow-600 text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Company Valuation</p>
+                            <p class="text-2xl font-semibold text-gray-900">$45B</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center text-sm text-green-600">
+                            <i class="fas fa-arrow-up mr-1"></i>
+                            <span>+8.5% this quarter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow card-hover">
+                    <div class="flex items-center">
+                        <div class="p-2 bg-purple-100 rounded-lg">
+                            <i class="fas fa-users text-purple-600 text-xl"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Ownership Stake</p>
+                            <p class="text-2xl font-semibold text-gray-900">0.125%</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center text-sm text-gray-600">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            <span>562,500 shares</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Revenue Growth Trajectory</h3>
+                    <div style="height: 400px;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Investment Performance</h3>
+                    <div style="height: 400px;">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Library -->
+            <div class="bg-white rounded-lg shadow mb-8">
+                <div class="px-6 py-4 border-b">
+                    <h3 class="text-lg font-semibold text-gray-900">Document Library</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-file-pdf text-red-500 text-xl mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Financial Statements Q3 2024</h4>
+                                    <p class="text-sm text-gray-600">2.4 MB • Updated Oct 15</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-file-chart-line text-blue-500 text-xl mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Market Analysis Report</h4>
+                                    <p class="text-sm text-gray-600">1.8 MB • Updated Oct 12</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-gray-200 rounded-lg p-4 hover:bg-gray-50 cursor-pointer">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-file-contract text-green-500 text-xl mr-3"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Investment Agreement</h4>
+                                    <p class="text-sm text-gray-600">892 KB • Updated Sep 28</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="bg-white rounded-lg shadow">
+                <div class="px-6 py-4 border-b">
+                    <h3 class="text-lg font-semibold text-gray-900">Quick Actions</h3>
+                </div>
+                <div class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <button class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-calculator text-blue-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium">Investment Calculator</span>
+                        </button>
+                        <button class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-download text-green-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium">Download Reports</span>
+                        </button>
+                        <button class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-calendar-alt text-purple-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium">Schedule Meeting</span>
+                        </button>
+                        <button class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
+                            <i class="fas fa-headset text-orange-600 text-2xl mb-2"></i>
+                            <span class="text-sm font-medium">Contact Support</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
+                    <i class="fas fa-check text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mt-2">Success!</h3>
+                <div class="mt-2 px-7 py-3">
+                    <p class="text-sm text-gray-500" id="success-message">Action completed successfully.</p>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button onclick="closeModal()" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-300">
+                        OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Section management
+        function showSection(sectionName) {
+            const sections = ['login-section', 'register-section', 'dashboard-section'];
+            sections.forEach(section => {
+                document.getElementById(section).classList.add('hidden');
+            });
+            document.getElementById(sectionName + '-section').classList.remove('hidden');
+            
+            if (sectionName === 'dashboard') {
+                setTimeout(initCharts, 100); // Initialize charts after section is shown
+            }
+        }
+
+        // Login handler
+        function handleLogin(event) {
+            event.preventDefault();
+            showMessage('Login successful! Redirecting to dashboard...', 'success');
+            setTimeout(() => {
+                closeModal();
+                showSection('dashboard');
+            }, 2000);
+        }
+
+        // Registration handler
+        function handleRegistration(event) {
+            event.preventDefault();
+            showMessage('Registration submitted successfully! You will receive confirmation within 24-48 hours.', 'success');
+            setTimeout(() => {
+                closeModal();
+                showSection('login');
+            }, 3000);
+        }
+
+        // Message modal
+        function showMessage(message, type) {
+            document.getElementById('success-message').textContent = message;
+            document.getElementById('success-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').classList.add('hidden');
+        }
+
+        // Initialize charts
+        function initCharts() {
+            // Revenue Chart
+            const revenueCtx = document.getElementById('revenueChart');
+            if (revenueCtx) {
+                new Chart(revenueCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2019', '2020', '2021', '2022', '2023', '2024E', '2025E'],
+                        datasets: [{
+                            label: 'Revenue (Billions)',
+                            data: [17.5, 19.2, 20.8, 21.9, 23.2, 25.1, 27.3],
+                            borderColor: '#1e40af',
+                            backgroundColor: 'rgba(30, 64, 175, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Revenue ($B)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Performance Chart
+            const performanceCtx = document.getElementById('performanceChart');
+            if (performanceCtx) {
+                new Chart(performanceCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Current Value', 'Projected Growth'],
+                        datasets: [{
+                            data: [500000, 1000000],
+                            backgroundColor: ['#1e40af', '#10b981'],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize default view
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('login');
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDmgQozYF8S8Cc2jeFHl2P7fPfBzespAeTeT%2BhYoGf%2BnSaeP9YnFTyCbY%2FS%2BV3aNsRsLs%2FbnYHRGoQu%2BkF4dOlwOWWD8%2BLNHlC4Yh0cYH6sfvuQR4OZ1ru4ghZ3o0AvbCVisWYlTaBwWVooSYJBBvMY7TxIGFGQ23CkP8ftFurLBVb%2B6Zxt1cxGHFjGr2V0NZWC%2B3Kfo0ZGUE0cluhm7G29veJItqRhCnt0uw9u8UTBVtDr9%2BUukCJiMsCU%2Fx6xImXCAJlXK4NWDc5JKpq3d0AxeMn8GcVY8Q0BBWR4L4XffltN3n8%2B6Bly8lVM6WEcTXl%2BZ5%2B4ERm0oorgRxFJTeZy%2F3n848qONusDktFYFxggSOYuHKiBzWd2G96EBLkuH6PWTjMe9%2FG%2BZXMFIJViShZ%2B%2FjxYUtFCHRX%2BkIEkJ5RAhHUOr00V5KKgO2nHPkvDVulXjG7PK4kWmUX5442O%2FvB8gzcFkp%2BZ2k6pSi2%2BzkJjtJ4v%2Bb41vB4JeWS3JZ8jr8oyEl%2BX8TWxnFX2UQi2jyPC8%3D";
+        window.__genspark_locale = "zh-CN";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDmgQozYF8S8Cc2jeFHl2P7fPfBzespAeTeT+hYoGf+nSaeP9YnFTyCbY/S+V3aNsRsLs/bnYHRGoQu+kF4dOlwOWWD8+LNHlC4Yh0cYH6sfvuQR4OZ1ru4ghZ3o0AvbCVisWYlTaBwWVooSYJBBvMY7TxIGFGQ23CkP8ftFurLBVb+6Zxt1cxGHFjGr2V0NZWC+3Kfo0ZGUE0cluhm7G29veJItqRhCnt0uw9u8UTBVtDr9+UukCJiMsCU/x6xImXCAJlXK4NWDc5JKpq3d0AxeMn8GcVY8Q0BBWR4L4XffltN3n8+6Bly8lVM6WEcTXl+Z5+4ERm0oorgRxFJTeZy/3n848qONusDktFYFxggSOYuHKiBzWd2G96EBLkuH6PWTjMe9/G+ZXMFIJViShZ+/jxYUtFCHRX+kIEkJ5RAhHUOr00V5KKgO2nHPkvDVulXjG7PK4kWmUX5442O/vB8gzcFkp+Z2k6pSi2+zkJjtJ4v+b41vB4JeWS3JZ8jr8oyEl+X8TWxnFX2UQi2jyPC8=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medline Industries Pre-IPO - Master Navigation Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+        }
+        .role-badge {
+            animation: pulse 2s infinite;
+        }
+        .metrics-counter {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="gradient-bg shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="bg-white p-3 rounded-lg shadow-md">
+                        <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">Medline Industries Pre-IPO</h1>
+                        <p class="text-blue-100">Master Navigation Hub & Control Center</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="role-badge bg-yellow-400 text-yellow-900 px-4 py-2 rounded-full font-semibold">
+                        <i class="fas fa-crown mr-2"></i>Administrator
+                    </div>
+                    <button onclick="toggleUserMenu()" class="bg-white bg-opacity-20 p-2 rounded-full text-white hover:bg-opacity-30 transition-all">
+                        <i class="fas fa-user-circle text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick Stats Dashboard -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm font-medium">Total Pages Created</p>
+                        <p class="text-3xl font-bold text-blue-600 metrics-counter">25</p>
+                    </div>
+                    <div class="bg-blue-100 p-3 rounded-full">
+                        <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center">
+                    <span class="text-green-500 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>100% Complete
+                    </span>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm font-medium">Investment Target</p>
+                        <p class="text-3xl font-bold text-green-600 metrics-counter">$50B</p>
+                    </div>
+                    <div class="bg-green-100 p-3 rounded-full">
+                        <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center">
+                    <span class="text-green-500 text-sm font-medium">
+                        <i class="fas fa-chart-up mr-1"></i>IPO Target 2025
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm font-medium">Annual Revenue</p>
+                        <p class="text-3xl font-bold text-purple-600 metrics-counter">$23.2B</p>
+                    </div>
+                    <div class="bg-purple-100 p-3 rounded-full">
+                        <i class="fas fa-chart-line text-purple-600 text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center">
+                    <span class="text-green-500 text-sm font-medium">
+                        <i class="fas fa-trophy mr-1"></i>50 Years Growth
+                    </span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg p-6 card-hover">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-gray-600 text-sm font-medium">EBITDA Margin</p>
+                        <p class="text-3xl font-bold text-orange-600 metrics-counter">5.8%</p>
+                    </div>
+                    <div class="bg-orange-100 p-3 rounded-full">
+                        <i class="fas fa-percentage text-orange-600 text-xl"></i>
+                    </div>
+                </div>
+                <div class="mt-4 flex items-center">
+                    <span class="text-green-500 text-sm font-medium">
+                        <i class="fas fa-arrow-up mr-1"></i>vs Industry 1.6-2.0%
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Navigation Sections -->
+    <section class="container mx-auto px-4 pb-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Quick Access -->
+            <div class="lg:col-span-2">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-rocket text-blue-600 mr-3"></i>
+                    Quick Access Dashboard
+                </h2>
+
+                <!-- User Role Navigation -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-8">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Select Your Role</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button onclick="showContent('investor')" class="role-btn bg-blue-50 border-2 border-blue-200 rounded-lg p-4 text-left hover:bg-blue-100 transition-all">
+                            <i class="fas fa-user-tie text-blue-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-800">Investor</h4>
+                            <p class="text-sm text-gray-600">Access investment materials & portal</p>
+                        </button>
+                        <button onclick="showContent('advertiser')" class="role-btn bg-green-50 border-2 border-green-200 rounded-lg p-4 text-left hover:bg-green-100 transition-all">
+                            <i class="fas fa-bullhorn text-green-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-800">Advertiser</h4>
+                            <p class="text-sm text-gray-600">Landing pages & campaign materials</p>
+                        </button>
+                        <button onclick="showContent('admin')" class="role-btn bg-purple-50 border-2 border-purple-200 rounded-lg p-4 text-left hover:bg-purple-100 transition-all">
+                            <i class="fas fa-cog text-purple-600 text-2xl mb-2"></i>
+                            <h4 class="font-semibold text-gray-800">Administrator</h4>
+                            <p class="text-sm text-gray-600">Project management & controls</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <div id="investor-content" class="content-section hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-chart-pie text-blue-600 mr-3"></i>
+                            Investor Portal & Materials
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/investor_materials', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/d013d650-34f5-4ebe-a7c9-b272d653c3f5_wm" alt="Investor Portal" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Investor Portal Website</h4>
+                                <p class="text-sm text-gray-600">Complete investor portal with dashboard access</p>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">Portal</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/investor_materials', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/c0f9e8e0-4e4d-4efc-9f5c-c3321bfb6e4f_wm" alt="Financial Analysis" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Financial Analysis & Reports</h4>
+                                <p class="text-sm text-gray-600">DCF models, competitive analysis, due diligence</p>
+                                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mt-2">Analysis</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/investor_materials', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/ba85adc7-68b5-4c18-8291-f3dde101b19a_wm" alt="Login Portal" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Secure Login System</h4>
+                                <p class="text-sm text-gray-600">Investor authentication and access control</p>
+                                <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded mt-2">Security</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/investor_materials', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/37bf3895-03f4-4a89-ab4f-7c335631c881_wm" alt="Resource Center" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Resource Center</h4>
+                                <p class="text-sm text-gray-600">Document library and investment resources</p>
+                                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-2">Resources</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="advertiser-content" class="content-section hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-ad text-green-600 mr-3"></i>
+                            Advertising Landing Pages & Campaigns
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/ad_landing_pages', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/2fb6e8ae-7b2b-43d4-a29f-9af207e5d3c2_wm" alt="Mobile Landing Page" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Main Ad Landing Page</h4>
+                                <p class="text-sm text-gray-600">High-conversion email capture & group invitation</p>
+                                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mt-2">High-Convert</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/ad_landing_pages', '_blank')">
+                                <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/351d25e5-a864-4926-82b3-52a2affc989a_wm" alt="Desktop Landing Page" class="w-full h-32 object-cover rounded-lg mb-3">
+                                <h4 class="font-semibold text-gray-800">Desktop Landing Page</h4>
+                                <p class="text-sm text-gray-600">Professional desktop version with split layout</p>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mt-2">Desktop</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/ad_landing_pages', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-heart text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Thank You Page</h4>
+                                <p class="text-sm text-gray-600">Post-subscription thank you with group invites</p>
+                                <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded mt-2">Follow-up</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/ad_landing_pages', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-users text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Community Access</h4>
+                                <p class="text-sm text-gray-600">VIP investor group access and benefits</p>
+                                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded mt-2">Community</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="admin-content" class="content-section hidden">
+                    <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                            <i class="fas fa-tasks text-purple-600 mr-3"></i>
+                            Project Management & Administration
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/project_management', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-red-500 to-pink-500 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-chart-gantt text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Project Dashboard</h4>
+                                <p class="text-sm text-gray-600">Complete project execution and management tools</p>
+                                <span class="inline-block bg-red-100 text-red-800 text-xs px-2 py-1 rounded mt-2">Management</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/project_management', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-rocket text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Deployment Guide</h4>
+                                <p class="text-sm text-gray-600">Automated deployment and setup instructions</p>
+                                <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded mt-2">Deploy</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign/project_management', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-play-circle text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Launch Automation</h4>
+                                <p class="text-sm text-gray-600">Campaign launch scripts and automation</p>
+                                <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded mt-2">Automation</span>
+                            </div>
+                            <div class="border rounded-lg p-4 card-hover cursor-pointer" onclick="window.open('https://www.genspark.ai/aidrive/files/medline_ipo_campaign', '_blank')">
+                                <div class="w-full h-32 bg-gradient-to-br from-gray-600 to-gray-800 rounded-lg mb-3 flex items-center justify-center">
+                                    <i class="fas fa-file-alt text-white text-4xl"></i>
+                                </div>
+                                <h4 class="font-semibold text-gray-800">Complete Documentation</h4>
+                                <p class="text-sm text-gray-600">Full project README and usage guide</p>
+                                <span class="inline-block bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded mt-2">Docs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Site Map & Tools -->
+            <div class="lg:col-span-1">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                    <i class="fas fa-sitemap text-purple-600 mr-3"></i>
+                    Site Map & Tools
+                </h2>
+
+                <!-- Quick Links -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Quick Access Links</h3>
+                    <div class="space-y-3">
+                        <a href="https://www.genspark.ai/aidrive/files/medline_ipo_campaign" class="flex items-center p-3 bg-blue-50 rounded-lg nav-link" target="_blank">
+                            <i class="fas fa-download text-blue-600 mr-3"></i>
+                            <span class="text-gray-800">Download All Files</span>
+                        </a>
+                        <a href="https://www.genspark.ai/aidrive/files/medline_ipo_campaign/landing_pages" class="flex items-center p-3 bg-green-50 rounded-lg nav-link" target="_blank">
+                            <i class="fas fa-mouse-pointer text-green-600 mr-3"></i>
+                            <span class="text-gray-800">Landing Pages</span>
+                        </a>
+                        <a href="https://www.genspark.ai/aidrive/files/medline_ipo_campaign/ad_landing_pages" class="flex items-center p-3 bg-yellow-50 rounded-lg nav-link" target="_blank">
+                            <i class="fas fa-ad text-yellow-600 mr-3"></i>
+                            <span class="text-gray-800">Ad Campaign Pages</span>
+                        </a>
+                        <a href="https://www.genspark.ai/aidrive/files/medline_ipo_campaign/investor_materials" class="flex items-center p-3 bg-purple-50 rounded-lg nav-link" target="_blank">
+                            <i class="fas fa-briefcase text-purple-600 mr-3"></i>
+                            <span class="text-gray-800">Investor Materials</span>
+                        </a>
+                        <a href="https://www.genspark.ai/aidrive/files/medline_ipo_campaign/project_management" class="flex items-center p-3 bg-red-50 rounded-lg nav-link" target="_blank">
+                            <i class="fas fa-tasks text-red-600 mr-3"></i>
+                            <span class="text-gray-800">Project Management</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- File Statistics -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">File Statistics</h3>
+                    <canvas id="filesChart" style="height: 200px;"></canvas>
+                </div>
+
+                <!-- System Status -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">System Status</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Landing Pages</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Investor Portal</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Ad Campaigns</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Ready</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-600">Analytics</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Configured</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Medline Industries Pre-IPO</h3>
+                    <p class="text-gray-300 text-sm">Complete investment marketing platform with professional-grade materials and automated deployment systems.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Investor Portal</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Campaign Materials</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Project Management</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Documentation</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-3">System Info</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li>Total Files: 25+</li>
+                        <li>Platform: Multi-device</li>
+                        <li>Status: Production Ready</li>
+                        <li>Last Updated: 2024</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2024 Medline Industries Pre-IPO Marketing Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Role-based content display
+        function showContent(role) {
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.add('hidden'));
+            
+            // Show selected content
+            const targetSection = document.getElementById(role + '-content');
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            }
+            
+            // Update role buttons
+            const buttons = document.querySelectorAll('.role-btn');
+            buttons.forEach(btn => btn.classList.remove('ring-2', 'ring-blue-500'));
+            event.target.closest('.role-btn').classList.add('ring-2', 'ring-blue-500');
+        }
+
+        // Toggle user menu
+        function toggleUserMenu() {
+            alert('User menu functionality would be implemented here');
+        }
+
+        // Initialize charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Files Chart
+            const ctx = document.getElementById('filesChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Landing Pages', 'Investor Materials', 'Project Mgmt', 'Ad Pages'],
+                    datasets: [{
+                        data: [5, 5, 3, 3],
+                        backgroundColor: [
+                            '#3B82F6',
+                            '#10B981',
+                            '#8B5CF6',
+                            '#F59E0B'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                boxWidth: 12,
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Auto-show investor content by default
+            showContent('investor');
+            document.querySelector('.role-btn').classList.add('ring-2', 'ring-blue-500');
+        });
+
+        // Animated counter effect
+        function animateCounters() {
+            const counters = document.querySelectorAll('.metrics-counter');
+            counters.forEach(counter => {
+                const target = counter.innerText;
+                const duration = 2000;
+                const increment = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.innerText = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.innerText = Math.floor(current);
+                    }
+                }, 16);
+            });
+        }
+
+        // Start animations when page loads
+        window.addEventListener('load', animateCounters);
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDswN4Fu3nhMdUYQvUBx70mazke8zc%2B7U3EoJ3Z8BeorMtuyKBm%2FzhPbHn%2B8Xz7v8c51h4YSGklz8rau1BH%2B8Fnp8ReinvyuDab1bzFCRFhPBMpmJ7fj2eWegaNTwU1ucRu6EZvM6xvVrxV%2FBxSkC%2BplyjfDPk8gB7GeB7rRuKbgsefpO9piPqHPRmEsqGI2w%2F0%2BS9Kb%2BhvDuczNxdAXANeLKdgI8%2Bv0eoWxf%2BQCth%2FgwVd%2Bn61WVE7D1dIg6MFZF98Sry2IHRYUVni2wEEeO76%2FoL8YMC8Czf7EV%2BHfaH63hhULcKZK%2BtQPTkgyxy1z9IElD1kPg%2B6RE5Vi3sTht%2B3zVW8SVXreMujUK5MqT9Ccx%2FHzMNhFJovFg1BeDMkd9dlNAEhvzUXBvn2B7xctplQLgSFiTQCEo9ftMVH1ubKKaE9u5hj0UTmo5CDsjtG8lE3Gh782iF7or%2FrbkXbUqkHUHA24kK0ZGBHbZKSDflnssKNeh6qnIeHbuKrhSAtHNdt8NOlrKs7UmAxQkTEsj90g%3D";
+        window.__genspark_locale = "zh-CN";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDswN4Fu3nhMdUYQvUBx70mazke8zc+7U3EoJ3Z8BeorMtuyKBm/zhPbHn+8Xz7v8c51h4YSGklz8rau1BH+8Fnp8ReinvyuDab1bzFCRFhPBMpmJ7fj2eWegaNTwU1ucRu6EZvM6xvVrxV/BxSkC+plyjfDPk8gB7GeB7rRuKbgsefpO9piPqHPRmEsqGI2w/0+S9Kb+hvDuczNxdAXANeLKdgI8+v0eoWxf+QCth/gwVd+n61WVE7D1dIg6MFZF98Sry2IHRYUVni2wEEeO76/oL8YMC8Czf7EV+HfaH63hhULcKZK+tQPTkgyxy1z9IElD1kPg+6RE5Vi3sTht+3zVW8SVXreMujUK5MqT9Ccx/HzMNhFJovFg1BeDMkd9dlNAEhvzUXBvn2B7xctplQLgSFiTQCEo9ftMVH1ubKKaE9u5hj0UTmo5CDsjtG8lE3Gh782iF7or/rbkXbUqkHUHA24kK0ZGBHbZKSDflnssKNeh6qnIeHbuKrhSAtHNdt8NOlrKs7UmAxQkTEsj90g=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

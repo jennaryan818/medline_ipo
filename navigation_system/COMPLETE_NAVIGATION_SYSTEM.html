@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medline Pre-IPO - Complete Navigation Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .nav-item { transition: all 0.3s ease; }
+        .nav-item:hover { background-color: rgba(59, 130, 246, 0.1); }
+        .user-journey { position: relative; }
+        .user-journey::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: #3b82f6; }
+        .journey-step { position: relative; background: white; }
+        .journey-step::before { content: ''; position: absolute; left: -8px; top: 50%; width: 16px; height: 16px; background: #3b82f6; border-radius: 50%; transform: translateY(-50%); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="gradient-bg text-white shadow-2xl sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <i class="fas fa-chart-line text-3xl text-yellow-400"></i>
+                    <div>
+                        <h1 class="text-2xl font-bold">Medline Industries</h1>
+                        <p class="text-blue-200 text-sm">Pre-IPO Investment Platform</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#dashboard" class="nav-item px-3 py-2 rounded hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-tachometer-alt mr-2"></i>Dashboard
+                    </a>
+                    <a href="#landing-pages" class="nav-item px-3 py-2 rounded hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-rocket mr-2"></i>Landing Pages
+                    </a>
+                    <a href="#investor-materials" class="nav-item px-3 py-2 rounded hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-briefcase mr-2"></i>Investor Hub
+                    </a>
+                    <a href="#community" class="nav-item px-3 py-2 rounded hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-users mr-2"></i>Community
+                    </a>
+                    <a href="#site-map" class="nav-item px-3 py-2 rounded hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-sitemap mr-2"></i>Site Map
+                    </a>
+                </nav>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Key Metrics -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-6">Complete Investment Marketing Ecosystem</h2>
+            <p class="text-xl text-blue-200 mb-8">Navigate through our comprehensive Pre-IPO investment platform</p>
+            <div class="grid md:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur">
+                    <div class="text-3xl font-bold text-yellow-400">$23.2B</div>
+                    <div class="text-blue-200">Annual Revenue</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur">
+                    <div class="text-3xl font-bold text-yellow-400">50 Years</div>
+                    <div class="text-blue-200">Consecutive Growth</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur">
+                    <div class="text-3xl font-bold text-yellow-400">$50B</div>
+                    <div class="text-blue-200">IPO Target</div>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-lg p-6 backdrop-blur">
+                    <div class="text-3xl font-bold text-yellow-400">25+</div>
+                    <div class="text-blue-200">Page Ecosystem</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Dashboard -->
+    <section id="dashboard" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-tachometer-alt text-blue-600 mr-3"></i>Quick Access Dashboard
+            </h3>
+            <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Main Landing Page -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <div class="text-blue-600 text-3xl mb-4">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-gray-800">Main Landing Page</h4>
+                    <p class="text-gray-600 text-sm mb-4">High-conversion advertising landing page</p>
+                    <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm">
+                        <i class="fas fa-external-link-alt mr-2"></i>Open Page
+                    </a>
+                </div>
+
+                <!-- Email Capture -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
+                    <div class="text-green-600 text-3xl mb-4">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-gray-800">Email Collection</h4>
+                    <p class="text-gray-600 text-sm mb-4">Optimized for maximum email capture</p>
+                    <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors text-sm">
+                        <i class="fas fa-play mr-2"></i>Start Capture
+                    </a>
+                </div>
+
+                <!-- Community Access -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
+                    <div class="text-purple-600 text-3xl mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-gray-800">VIP Community</h4>
+                    <p class="text-gray-600 text-sm mb-4">Exclusive investor groups access</p>
+                    <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition-colors text-sm">
+                        <i class="fas fa-users mr-2"></i>Join Groups
+                    </a>
+                </div>
+
+                <!-- Investor Portal -->
+                <div class="card-hover bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 border border-yellow-200">
+                    <div class="text-yellow-600 text-3xl mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4 class="font-bold text-lg mb-2 text-gray-800">Investor Portal</h4>
+                    <p class="text-gray-600 text-sm mb-4">Complete investor resources</p>
+                    <a href="#" onclick="openPage('medline_investor_portal.html')" class="inline-block bg-yellow-600 text-white px-4 py-2 rounded hover:bg-yellow-700 transition-colors text-sm">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Enter Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Landing Pages Section -->
+    <section id="landing-pages" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-rocket text-blue-600 mr-3"></i>High-Conversion Landing Pages
+            </h3>
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/2fb6e8ae-7b2b-43d4-a29f-9af207e5d3c2_wm" alt="Mobile Landing Page" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-4 text-gray-800">Mobile-Optimized Landing Page</h4>
+                        <p class="text-gray-600 mb-4">Designed for maximum mobile conversion with compelling headlines and social proof</p>
+                        <div class="flex space-x-3">
+                            <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-mobile-alt mr-2"></i>View Mobile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/351d25e5-a864-4926-82b3-52a2affc989a_wm" alt="Desktop Landing Page" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-2xl font-bold mb-4 text-gray-800">Desktop Landing Page</h4>
+                        <p class="text-gray-600 mb-4">Professional desktop experience with split-screen layout and multiple CTAs</p>
+                        <div class="flex space-x-3">
+                            <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                                <i class="fas fa-desktop mr-2"></i>View Desktop
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landing Pages Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-blue-600 text-2xl mb-3"><i class="fas fa-bullseye"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Main Ad Landing Page</h4>
+                    <p class="text-gray-600 text-sm mb-4">Primary advertising landing page with email capture and group invitations</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('main-landing')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-green-600 text-2xl mb-3"><i class="fas fa-check-circle"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Thank You Page</h4>
+                    <p class="text-gray-600 text-sm mb-4">Post-submission page with group invitations and next steps</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('THANK_YOU_GROUP_INVITE.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('thank-you')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-purple-600 text-2xl mb-3"><i class="fas fa-users"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Community Access</h4>
+                    <p class="text-gray-600 text-sm mb-4">Exclusive group access and community benefits showcase</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('community')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-orange-600 text-2xl mb-3"><i class="fas fa-video"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Webinar Registration</h4>
+                    <p class="text-gray-600 text-sm mb-4">Educational webinar signup with exclusive content preview</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('medline_webinar_registration.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('webinar')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-yellow-600 text-2xl mb-3"><i class="fas fa-calculator"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Investment Calculator</h4>
+                    <p class="text-gray-600 text-sm mb-4">Interactive ROI calculator and investment projector tool</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('medline_calculator_tool.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('calculator')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover">
+                    <div class="text-red-600 text-2xl mb-3"><i class="fas fa-trophy"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Success Stories</h4>
+                    <p class="text-gray-600 text-sm mb-4">Investor testimonials and social proof showcase</p>
+                    <div class="flex space-x-2">
+                        <a href="#" onclick="openPage('medline_success_stories.html')" class="text-blue-600 hover:text-blue-800"><i class="fas fa-external-link-alt"></i></a>
+                        <a href="#" onclick="showPageInfo('success')" class="text-gray-400 hover:text-gray-600"><i class="fas fa-info-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investor Materials Hub -->
+    <section id="investor-materials" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-briefcase text-blue-600 mr-3"></i>Professional Investor Materials
+            </h3>
+            
+            <!-- Featured Materials -->
+            <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-8 border border-blue-200">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/d013d650-34f5-4ebe-a7c9-b272d653c3f5_wm" alt="Investor Portal" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h4 class="text-2xl font-bold mb-4 text-gray-800">Complete Investor Portal</h4>
+                    <p class="text-gray-600 mb-6">Comprehensive investor experience with dashboard, documents, and portfolio tracking</p>
+                    <a href="#" onclick="openPage('medline_investor_portal.html')" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block">
+                        <i class="fas fa-sign-in-alt mr-2"></i>Access Portal
+                    </a>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-8 border border-green-200">
+                    <img src="https://cdn1.genspark.ai/user-upload-image/gpt_image_generated/c0f9e8e0-4e4d-4efc-9f5c-c3321bfb6e4f_wm" alt="Financial Analysis" class="w-full h-48 object-cover rounded-lg mb-6">
+                    <h4 class="text-2xl font-bold mb-4 text-gray-800">Financial Analysis & Reports</h4>
+                    <p class="text-gray-600 mb-6">Detailed financial modeling, valuation analysis, and investment projections</p>
+                    <a href="#" onclick="openPage('medline_executive_summary.html')" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block">
+                        <i class="fas fa-chart-line mr-2"></i>View Analysis
+                    </a>
+                </div>
+            </div>
+
+            <!-- Materials Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border">
+                    <div class="text-blue-600 text-2xl mb-3"><i class="fas fa-file-alt"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Executive Summary</h4>
+                    <p class="text-gray-600 text-sm mb-4">Comprehensive investment memorandum and executive overview</p>
+                    <a href="#" onclick="openPage('medline_executive_summary.html')" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-download mr-2"></i>Download
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border">
+                    <div class="text-purple-600 text-2xl mb-3"><i class="fas fa-search"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Due Diligence Pack</h4>
+                    <p class="text-gray-600 text-sm mb-4">Complete DD materials for institutional investors</p>
+                    <a href="#" onclick="openPage('medline_due_diligence_package.html')" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-folder-open mr-2"></i>Access
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border">
+                    <div class="text-green-600 text-2xl mb-3"><i class="fas fa-question-circle"></i></div>
+                    <h4 class="font-bold text-lg mb-2">FAQ & Disclosures</h4>
+                    <p class="text-gray-600 text-sm mb-4">Comprehensive Q&A and risk disclosure documents</p>
+                    <a href="#" onclick="openPage('medline_faq_risk_disclosure.html')" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-book mr-2"></i>Read
+                    </a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-6 card-hover border">
+                    <div class="text-orange-600 text-2xl mb-3"><i class="fas fa-archive"></i></div>
+                    <h4 class="font-bold text-lg mb-2">Resource Center</h4>
+                    <p class="text-gray-600 text-sm mb-4">Complete resource library with all materials</p>
+                    <a href="#" onclick="openPage('medline_complete_resource_center.html')" class="text-blue-600 hover:text-blue-800">
+                        <i class="fas fa-library mr-2"></i>Browse
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Journey Mapping -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-route text-blue-600 mr-3"></i>User Journey Mapping
+            </h3>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- New Investor Journey -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <i class="fas fa-user-plus text-green-600 mr-3"></i>New Investor Journey
+                    </h4>
+                    <div class="user-journey pl-8 space-y-6">
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">1. Discovery</div>
+                            <div class="text-sm text-gray-600 mt-1">Ad clicks → Main Landing Page</div>
+                            <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="text-blue-600 text-xs hover:underline">View Page</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">2. Engagement</div>
+                            <div class="text-sm text-gray-600 mt-1">Email signup → Thank You Page</div>
+                            <a href="#" onclick="openPage('THANK_YOU_GROUP_INVITE.html')" class="text-blue-600 text-xs hover:underline">View Page</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">3. Community</div>
+                            <div class="text-sm text-gray-600 mt-1">Group invitation → Community Access</div>
+                            <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="text-blue-600 text-xs hover:underline">View Page</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">4. Education</div>
+                            <div class="text-sm text-gray-600 mt-1">Webinar signup → Learning Phase</div>
+                            <a href="#" onclick="openPage('medline_webinar_registration.html')" class="text-blue-600 text-xs hover:underline">View Page</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">5. Qualification</div>
+                            <div class="text-sm text-gray-600 mt-1">Investor Portal → Due Diligence</div>
+                            <a href="#" onclick="openPage('medline_investor_portal.html')" class="text-blue-600 text-xs hover:underline">View Page</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Returning Investor Journey -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h4 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+                        <i class="fas fa-user-check text-blue-600 mr-3"></i>Returning Investor Journey
+                    </h4>
+                    <div class="user-journey pl-8 space-y-6">
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">1. Direct Access</div>
+                            <div class="text-sm text-gray-600 mt-1">Portal login → Dashboard</div>
+                            <a href="#" onclick="openPage('medline_investor_portal.html')" class="text-blue-600 text-xs hover:underline">Access Portal</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">2. Portfolio Review</div>
+                            <div class="text-sm text-gray-600 mt-1">Investment tracking → Performance</div>
+                            <a href="#" onclick="openPage('medline_calculator_tool.html')" class="text-blue-600 text-xs hover:underline">View Calculator</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">3. Document Access</div>
+                            <div class="text-sm text-gray-600 mt-1">Resource center → Latest reports</div>
+                            <a href="#" onclick="openPage('medline_complete_resource_center.html')" class="text-blue-600 text-xs hover:underline">Browse Resources</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">4. Community Engagement</div>
+                            <div class="text-sm text-gray-600 mt-1">Group participation → Networking</div>
+                            <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="text-blue-600 text-xs hover:underline">Join Discussion</a>
+                        </div>
+                        <div class="journey-step p-4 rounded-lg shadow-sm">
+                            <div class="font-semibold text-gray-800">5. Referral Program</div>
+                            <div class="text-sm text-gray-600 mt-1">Success stories → Recommendations</div>
+                            <a href="#" onclick="openPage('medline_success_stories.html')" class="text-blue-600 text-xs hover:underline">View Stories</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Site Map -->
+    <section id="site-map" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-sitemap text-blue-600 mr-3"></i>Complete Site Architecture
+            </h3>
+            
+            <!-- Site Map Visualization -->
+            <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 mb-12">
+                <div class="text-center mb-8">
+                    <div class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-bold">
+                        <i class="fas fa-home mr-2"></i>Navigation Hub
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Landing Pages Branch -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-center mb-4">
+                            <div class="bg-blue-100 text-blue-600 px-4 py-2 rounded-lg font-semibold">
+                                <i class="fas fa-rocket mr-2"></i>Landing Pages
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Main Ad Landing</span>
+                                <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Thank You Page</span>
+                                <a href="#" onclick="openPage('THANK_YOU_GROUP_INVITE.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Community Access</span>
+                                <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Webinar Registration</span>
+                                <a href="#" onclick="openPage('medline_webinar_registration.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Success Stories</span>
+                                <a href="#" onclick="openPage('medline_success_stories.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Investor Materials Branch -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-center mb-4">
+                            <div class="bg-green-100 text-green-600 px-4 py-2 rounded-lg font-semibold">
+                                <i class="fas fa-briefcase mr-2"></i>Investor Hub
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Investor Portal</span>
+                                <a href="#" onclick="openPage('medline_investor_portal.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Executive Summary</span>
+                                <a href="#" onclick="openPage('medline_executive_summary.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Due Diligence</span>
+                                <a href="#" onclick="openPage('medline_due_diligence_package.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>FAQ & Risks</span>
+                                <a href="#" onclick="openPage('medline_faq_risk_disclosure.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Resource Center</span>
+                                <a href="#" onclick="openPage('medline_complete_resource_center.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools & Calculators Branch -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-center mb-4">
+                            <div class="bg-purple-100 text-purple-600 px-4 py-2 rounded-lg font-semibold">
+                                <i class="fas fa-tools mr-2"></i>Interactive Tools
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>ROI Calculator</span>
+                                <a href="#" onclick="openPage('medline_calculator_tool.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Contact Form</span>
+                                <a href="#" onclick="openPage('medline_contact_form.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Project Dashboard</span>
+                                <a href="#" onclick="openPage('medline_project_dashboard.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Management Tools Branch -->
+                    <div class="bg-white rounded-lg p-6 shadow-md">
+                        <div class="text-center mb-4">
+                            <div class="bg-orange-100 text-orange-600 px-4 py-2 rounded-lg font-semibold">
+                                <i class="fas fa-cogs mr-2"></i>Management
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Deployment Guide</span>
+                                <a href="#" onclick="openPage('automated_deployment_guide.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Launch Automation</span>
+                                <a href="#" onclick="openPage('campaign_launch_automation.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                            <div class="flex items-center justify-between p-2 bg-gray-50 rounded">
+                                <span>Complete Guide</span>
+                                <a href="#" onclick="openPage('README_COMPLETE_GUIDE.html')" class="text-blue-600"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Analytics -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h3 class="text-3xl font-bold text-center mb-12 text-gray-800">
+                <i class="fas fa-chart-bar text-blue-600 mr-3"></i>Platform Analytics Overview
+            </h3>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Conversion Funnel Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h4 class="text-xl font-bold mb-6 text-gray-800">Conversion Funnel Performance</h4>
+                    <canvas id="conversionChart" style="height: 300px;"></canvas>
+                </div>
+                
+                <!-- Page Performance Chart -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h4 class="text-xl font-bold mb-6 text-gray-800">Page Performance Metrics</h4>
+                    <canvas id="performanceChart" style="height: 300px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Contact -->
+    <section id="community" class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-8">Join the Medline Pre-IPO Community</h3>
+            <p class="text-xl text-blue-200 mb-12">Connect with fellow investors and get exclusive updates</p>
+            
+            <div class="grid md:grid-cols-4 gap-6 mb-12">
+                <a href="#" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all backdrop-blur">
+                    <i class="fab fa-telegram text-3xl mb-3"></i>
+                    <div class="font-semibold">Telegram Group</div>
+                    <div class="text-sm text-blue-200">12,847+ Members</div>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all backdrop-blur">
+                    <i class="fab fa-whatsapp text-3xl mb-3"></i>
+                    <div class="font-semibold">WhatsApp Group</div>
+                    <div class="text-sm text-blue-200">8,234+ Members</div>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all backdrop-blur">
+                    <i class="fab fa-discord text-3xl mb-3"></i>
+                    <div class="font-semibold">Discord Server</div>
+                    <div class="text-sm text-blue-200">15,623+ Members</div>
+                </a>
+                <a href="#" class="bg-white bg-opacity-10 rounded-lg p-6 hover:bg-opacity-20 transition-all backdrop-blur">
+                    <i class="fab fa-linkedin text-3xl mb-3"></i>
+                    <div class="font-semibold">LinkedIn Group</div>
+                    <div class="text-sm text-blue-200">6,892+ Members</div>
+                </a>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="bg-yellow-500 text-blue-900 px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                    <i class="fas fa-users mr-2"></i>Join All Groups
+                </a>
+                <a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="bg-white bg-opacity-20 text-white px-8 py-4 rounded-lg font-semibold hover:bg-opacity-30 transition-colors backdrop-blur">
+                    <i class="fas fa-envelope mr-2"></i>Get Updates
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-lg font-bold mb-4">
+                        <i class="fas fa-chart-line text-blue-400 mr-2"></i>Medline Pre-IPO
+                    </h4>
+                    <p class="text-gray-400 text-sm">Complete investment marketing platform for the Medline Industries Pre-IPO opportunity.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Landing Pages</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" onclick="openPage('MAIN_AD_LANDING_PAGE.html')" class="hover:text-white">Main Landing Page</a></li>
+                        <li><a href="#" onclick="openPage('THANK_YOU_GROUP_INVITE.html')" class="hover:text-white">Thank You Page</a></li>
+                        <li><a href="#" onclick="openPage('COMMUNITY_GROUP_ACCESS.html')" class="hover:text-white">Community Access</a></li>
+                        <li><a href="#" onclick="openPage('medline_webinar_registration.html')" class="hover:text-white">Webinar Registration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Investor Hub</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" onclick="openPage('medline_investor_portal.html')" class="hover:text-white">Investor Portal</a></li>
+                        <li><a href="#" onclick="openPage('medline_executive_summary.html')" class="hover:text-white">Executive Summary</a></li>
+                        <li><a href="#" onclick="openPage('medline_due_diligence_package.html')" class="hover:text-white">Due Diligence</a></li>
+                        <li><a href="#" onclick="openPage('medline_complete_resource_center.html')" class="hover:text-white">Resource Center</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Tools & Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" onclick="openPage('medline_calculator_tool.html')" class="hover:text-white">ROI Calculator</a></li>
+                        <li><a href="#" onclick="openPage('medline_project_dashboard.html')" class="hover:text-white">Project Dashboard</a></li>
+                        <li><a href="#" onclick="openPage('automated_deployment_guide.html')" class="hover:text-white">Deployment Guide</a></li>
+                        <li><a href="#" onclick="openPage('README_COMPLETE_GUIDE.html')" class="hover:text-white">Complete Guide</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center">
+                <div class="text-gray-400 text-sm">
+                    © 2024 Medline Industries Pre-IPO Platform. All rights reserved.
+                </div>
+                <div class="flex space-x-4 mt-4 sm:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Info Modal -->
+    <div id="pageInfoModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center h-full p-4">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="text-xl font-bold" id="modalTitle">Page Information</h4>
+                    <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div id="modalContent" class="text-gray-600 mb-6">
+                    Page information will be displayed here.
+                </div>
+                <div class="flex space-x-3">
+                    <button id="modalOpenButton" onclick="openPageFromModal()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-external-link-alt mr-2"></i>Open Page
+                    </button>
+                    <button onclick="closeModal()" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Page information data
+        const pageInfo = {
+            'main-landing': {
+                title: 'Main Ad Landing Page',
+                content: 'High-conversion advertising landing page optimized for email capture and group invitations. Features compelling headlines, social proof, countdown timers, and multiple CTA buttons.',
+                filename: 'MAIN_AD_LANDING_PAGE.html'
+            },
+            'thank-you': {
+                title: 'Thank You Page',
+                content: 'Post-submission confirmation page that guides users to join VIP investor groups across multiple platforms (Telegram, WhatsApp, Discord). Includes calendar booking and social sharing features.',
+                filename: 'THANK_YOU_GROUP_INVITE.html'
+            },
+            'community': {
+                title: 'Community Access Page',
+                content: 'Exclusive group access page showcasing community benefits, member testimonials, and multiple joining options. Designed to convert email subscribers into active community members.',
+                filename: 'COMMUNITY_GROUP_ACCESS.html'
+            },
+            'webinar': {
+                title: 'Webinar Registration',
+                content: 'Educational webinar signup page with speaker profiles, agenda preview, and limited-time registration offers. Generates high-quality leads through educational content marketing.',
+                filename: 'medline_webinar_registration.html'
+            },
+            'calculator': {
+                title: 'Investment Calculator',
+                content: 'Interactive ROI calculator and investment projection tool. Engages potential investors with dynamic calculations, scenario analysis, and personalized investment recommendations.',
+                filename: 'medline_calculator_tool.html'
+            },
+            'success': {
+                title: 'Success Stories',
+                content: 'Social proof showcase featuring investor testimonials, case studies, ROI examples, and video testimonials. Builds trust and credibility with potential investors.',
+                filename: 'medline_success_stories.html'
+            }
+        };
+
+        // Function to open pages (simulated - in real implementation, these would be actual links)
+        function openPage(filename) {
+            alert(`Opening: ${filename}\n\nIn a real deployment, this would navigate to the actual page. All HTML files are available in your AI Drive folder.`);
+        }
+
+        // Function to show page information
+        function showPageInfo(pageKey) {
+            const info = pageInfo[pageKey];
+            if (info) {
+                document.getElementById('modalTitle').textContent = info.title;
+                document.getElementById('modalContent').textContent = info.content;
+                document.getElementById('modalOpenButton').setAttribute('data-filename', info.filename);
+                document.getElementById('pageInfoModal').classList.remove('hidden');
+            }
+        }
+
+        // Function to open page from modal
+        function openPageFromModal() {
+            const filename = document.getElementById('modalOpenButton').getAttribute('data-filename');
+            openPage(filename);
+            closeModal();
+        }
+
+        // Function to close modal
+        function closeModal() {
+            document.getElementById('pageInfoModal').classList.add('hidden');
+        }
+
+        // Initialize charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Conversion Funnel Chart
+            const conversionCtx = document.getElementById('conversionChart').getContext('2d');
+            new Chart(conversionCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Ad Clicks', 'Page Views', 'Email Signups', 'Group Joins', 'Qualified Leads'],
+                    datasets: [{
+                        label: 'Conversion Funnel',
+                        data: [10000, 8500, 1275, 850, 170],
+                        backgroundColor: [
+                            '#3b82f6',
+                            '#10b981',
+                            '#f59e0b',
+                            '#ef4444',
+                            '#8b5cf6'
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // Page Performance Chart
+            const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+            new Chart(performanceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Main Landing', 'Thank You', 'Community', 'Webinar', 'Calculator', 'Others'],
+                    datasets: [{
+                        data: [35, 20, 15, 12, 10, 8],
+                        backgroundColor: [
+                            '#3b82f6',
+                            '#10b981',
+                            '#f59e0b',
+                            '#ef4444',
+                            '#8b5cf6',
+                            '#6b7280'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('pageInfoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Mobile menu toggle (placeholder)
+        document.querySelector('.md\\:hidden button').addEventListener('click', function() {
+            alert('Mobile menu would toggle here. In a real implementation, this would show/hide the navigation menu.');
+        });
+    </script>
+</body>
+</html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDswN4Fu3nhMdUYQvUBx70mazke8zc%2B7U3EoJ3Z8BeorMtuyKBm%2FzhPbHn%2B8Xz7v8c51h4YSGklz8rau1BH%2B8Fnp8ReinvyuDab1bzFCRFhPBMpmJ7fj2eWegaNTwU1ucRu6EZvM6xvVrxV%2FBxSkC%2BplyjfDPk8gB7GeB7rRuKbgsefpO9piPqHPRmEsqGI2w%2F0%2BS9Kb%2BhvDuczNxdAXANeKyn2Z3HwSFwks6YhGzv%2BgsihIjO1W2Xnml4CcFA5k8SYtnf2UVUdRVyLHc491cMFuLfI05DVRuDrswF1qsvw73748GC%2FivrkZUO6JR9qYJ6qSIxU2dM8ae4vc1DQvxBqghdKygRShU73g7f1MIc1X5RWcQTckXeqk0YWwQDhKzLEsoS48aSMWmLC56W3g85hrbWhVrRxc47iyeOuMbDkUiriL%2BZ25K7H0zYKxem9grCSkRfF4W60gdWEmW86YY28uV6L1lHivhzOurNMl1aNLgWwbH8h2L84Sblm2biOmVloWsJeEKr6fQu%2FBnPqocSO4C2BsWPd50f0kDs1SY6wzq0eg8f4SLTac7RPV7RPaxH2MCNCkeweJ8EjZyGh1QoN8%3D";
+        window.__genspark_locale = "zh-CN";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDswN4Fu3nhMdUYQvUBx70mazke8zc+7U3EoJ3Z8BeorMtuyKBm/zhPbHn+8Xz7v8c51h4YSGklz8rau1BH+8Fnp8ReinvyuDab1bzFCRFhPBMpmJ7fj2eWegaNTwU1ucRu6EZvM6xvVrxV/BxSkC+plyjfDPk8gB7GeB7rRuKbgsefpO9piPqHPRmEsqGI2w/0+S9Kb+hvDuczNxdAXANeKyn2Z3HwSFwks6YhGzv+gsihIjO1W2Xnml4CcFA5k8SYtnf2UVUdRVyLHc491cMFuLfI05DVRuDrswF1qsvw73748GC/ivrkZUO6JR9qYJ6qSIxU2dM8ae4vc1DQvxBqghdKygRShU73g7f1MIc1X5RWcQTckXeqk0YWwQDhKzLEsoS48aSMWmLC56W3g85hrbWhVrRxc47iyeOuMbDkUiriL+Z25K7H0zYKxem9grCSkRfF4W60gdWEmW86YY28uV6L1lHivhzOurNMl1aNLgWwbH8h2L84Sblm2biOmVloWsJeEKr6fQu/BnPqocSO4C2BsWPd50f0kDs1SY6wzq0eg8f4SLTac7RPV7RPaxH2MCNCkeweJ8EjZyGh1QoN8=";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    
